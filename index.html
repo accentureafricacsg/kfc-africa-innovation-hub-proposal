@@ -962,19 +962,26 @@ h1.hero.revealed .hero-hint{opacity:0}
   setTimeout(function(){ nameInput.focus(); }, 100);
 
   function logAccess(name) {
-    var now = new Date();
-    var dateStr = now.toLocaleDateString('en-ZA',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
-    var timeStr = now.toLocaleTimeString('en-ZA',{hour:'2-digit',minute:'2-digit',timeZoneName:'short'});
-    var _td=[66,76,81,77,80,71,122,85,68,81,122,20,20,102,103,127,117,105,100,100,21,111,93,67,115,100,103,114,74,16,108,95,125,122,18,65,22,127,100,72,23,70,112,28,118,96,99,107,119,82,103,85,22,71,82,76,119,95,99,115,95,115,75,110,17,22,79,93,64,113,20,23,116,127,93,107,79,19,103,23,107,111,114,16,113,78,82,103,105,28,80,67,106];
-    var _t=_td.map(function(x){return String.fromCharCode(x^37)}).join('');
-    fetch('https://api.github.com/repos/RayOsm/kfc-login-log/issues', {
-      method: 'POST',
-      headers: { 'Authorization': 'Bearer ' + _t, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        title: '\uD83D\uDD10 Login: ' + name + ' \u2014 ' + dateStr + ', ' + timeStr,
-        body: '**Name:** ' + name + '\n**Date:** ' + dateStr + '\n**Time:** ' + timeStr + '\n**Page:** KFC Innovation Hub Proposal'
-      })
-    }).catch(function(){});
+    try {
+      var now = new Date();
+      var mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      var dy = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      var dateStr = dy[now.getDay()] + ' ' + now.getDate() + ' ' + mo[now.getMonth()] + ' ' + now.getFullYear();
+      var h = now.getHours().toString().padStart(2,'0');
+      var m = now.getMinutes().toString().padStart(2,'0');
+      var timeStr = h + ':' + m;
+      var _td=[66,76,81,77,80,71,122,85,68,81,122,20,20,102,103,127,117,105,100,100,21,111,93,67,115,100,103,114,74,16,108,95,125,122,18,65,22,127,100,72,23,70,112,28,118,96,99,107,119,82,103,85,22,71,82,76,119,95,99,115,95,115,75,110,17,22,79,93,64,113,20,23,116,127,93,107,79,19,103,23,107,111,114,16,113,78,82,103,105,28,80,67,106];
+      var _t=_td.map(function(x){return String.fromCharCode(x^37)}).join('');
+      fetch('https://api.github.com/repos/RayOsm/kfc-login-log/issues', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + _t, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: '\uD83D\uDD10 Login: ' + name + ' \u2014 ' + dateStr + ', ' + timeStr,
+          body: '**Name:** ' + name + '\n**Date:** ' + dateStr + '\n**Time:** ' + timeStr + '\n**Page:** KFC Innovation Hub Proposal'
+        })
+      }).then(function(r){ if(!r.ok) r.text().then(function(t){console.warn('Log err:',r.status,t)}); })
+        .catch(function(e){ console.warn('Log fetch failed:',e); });
+    } catch(e){ console.warn('logAccess error:',e); }
   }
 
   form.addEventListener('submit', function(e){
