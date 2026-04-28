@@ -317,13 +317,13 @@ h1.hero.revealed .hero-hint{opacity:0}
 .chapter-div.all-dark{background:#0A0A12}
 .chapter-div .rule{width:1px;height:0;background:linear-gradient(180deg,var(--p),transparent);transition:height 1.6s var(--ease-out)}
 .chapter-div.vis .rule{height:50%}
-.chapter-div.to-dark .rule{background:linear-gradient(180deg,transparent,var(--p))}
+.chapter-div.to-dark .rule,.chapter-div.to-cream .rule{background:linear-gradient(180deg,transparent,var(--p))}
 .chapter-div.all-dark .rule{background:linear-gradient(180deg,transparent,var(--p))}
 .chapter-div .cc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;opacity:0;transition:opacity 1s var(--ease-out) .5s;max-width:780px;padding:0 24px}
 .chapter-div.vis .cc{opacity:1}
 .chapter-div .cc .num{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--p);margin-bottom:10px;letter-spacing:.01em;text-shadow:0 1px 12px rgba(0,0,0,.8)}
 .chapter-div .cc .t{font-family:var(--serif);font-size:clamp(32px,4.2vw,56px);font-weight:400;line-height:1.05;letter-spacing:-.02em;text-shadow:0 2px 18px rgba(0,0,0,.85),0 1px 6px rgba(0,0,0,.7)}
-.chapter-div.to-cream .cc .t{color:var(--ink)}
+.chapter-div.to-cream .cc .t{color:#fff}
 .chapter-div.to-dark .cc .t,.chapter-div.all-dark .cc .t{color:#fff}
 .chapter-div .cc .t em{font-style:italic;color:var(--p2)}
 .chapter-div.to-dark .cc .t em,.chapter-div.all-dark .cc .t em{color:var(--p3)}
@@ -1061,7 +1061,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 <div id="palette"><div class="pal-box">
   <div class="pal-head">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-    <input class="pal-input" id="palInput" placeholder="Jump to section — type to filter…" autocomplete="off">
+    <input class="pal-input" id="palInput" placeholder="Jump to section - type to filter…" autocomplete="off">
     <span class="pal-esc">ESC</span>
   </div>
   <div class="pal-list" id="palList"></div>
@@ -1093,7 +1093,7 @@ h1.hero.revealed .hero-hint{opacity:0}
       <span class="line"><span class="word" data-w="Tomorrow's KFC."></span><span class="hero-hint">HOVER →</span></span>
       <span class="line reveal"><span class="word kfc-accent" data-w="Now."></span></span>
     </h1>
-    <div class="lead">KFC Africa's core business is engineered for today's performance. The Innovation Hub exists to identify and pressure-test the five-to-ten-year bets that will define the next decade of growth — and, with equal rigour, to determine which ones are not worth placing.</div>
+    <div class="lead">KFC Africa's core business is engineered for today's performance. The Innovation Hub exists to identify and pressure-test the five-to-ten-year bets that will define the next decade of growth - and, with equal rigour, to determine which ones are not worth placing.</div>
   </div>
 
   <div class="hint pulse"><span class="line"></span><span>SCROLL</span><span class="arrow">↓</span><span class="line"></span></div>
@@ -1135,7 +1135,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 </section>
 
 <!-- ============ CHAPTER 01 DIVIDER ============ -->
-<section class="chapter-div to-cream" data-chap>
+<section class="chapter-div to-dark" data-chap>
   <div class="rule"></div>
   <div class="cc">
     <div class="num">Chapter · 01</div>
@@ -1143,7 +1143,7 @@ h1.hero.revealed .hero-hint{opacity:0}
   </div>
 </section>
 
-<!-- ============ SECTION: INSIGHTS — INTERACTIVE 2×2 ============ -->
+<!-- ============ SECTION: INSIGHTS - INTERACTIVE 2×2 ============ -->
 <section id="insights" class="section cream">
   <div class="wrap">
     <div class="sec-hd" data-reveal>
@@ -1156,15 +1156,15 @@ h1.hero.revealed .hero-hint{opacity:0}
     </div>
 
     <div class="mx-wrap">
-      <!-- Holding tray — collapses once sorted -->
+      <!-- Holding tray - collapses once sorted -->
       <div class="mx-tray-hold" id="mxTray" data-reveal>
         <div class="mx-tray-lbl">7 MARKET SIGNALS · SORTING ON SCROLL</div>
         <div class="mx-tray-chips" id="mxPool">
           <div class="mx-chip" data-chip="chicken" data-def="hot"><div class="ct">Chicken demand</div><div class="cd">Chicken is the strongest demand pocket, a structural tailwind for KFC, but also for Chicken Licken, Hungry Lion, Pedros and Nando's.</div></div>
           <div class="mx-chip" data-chip="digital" data-def="prove"><div class="ct">Digital convenience</div><div class="cd">Apps, delivery and easy pickup are now the tablestakes. Consumers increasingly choose brands that make digital effortless.</div></div>
           <div class="mx-chip" data-chip="value" data-def="prove"><div class="ct">Value-seeking behaviour</div><div class="cd">SA QSR customer behaviour is that of constrained buyers, prioritising affordable meals and low-friction access.</div></div>
-          <div class="mx-chip" data-chip="hidden" data-def="hot"><div class="ct">The adjacency opportunity</div><div class="cd">Shoprite, Woolworths and others sell hot rotisserie and grab-and-go meals without appearing in QSR data — invisible in the numbers, very real in the basket. The opportunity is to out-convenience them on occasion before they formalise.</div></div>
-          <div class="mx-chip" data-chip="breakfast" data-def="hot"><div class="ct">Breakfast as loyalty lock-in</div><div class="cd">The highest-frequency daypart is owned by McDonald's, Wimpy and informal vendors. For KFC, the opportunity isn't daypart coverage — it's owning the daily ritual that builds the deepest visit habit.</div></div>
+          <div class="mx-chip" data-chip="hidden" data-def="hot"><div class="ct">The adjacency opportunity</div><div class="cd">Shoprite, Woolworths and others sell hot rotisserie and grab-and-go meals without appearing in QSR data - invisible in the numbers, very real in the basket. The opportunity is to out-convenience them on occasion before they formalise.</div></div>
+          <div class="mx-chip" data-chip="breakfast" data-def="hot"><div class="ct">Breakfast as loyalty lock-in</div><div class="cd">The highest-frequency daypart is owned by McDonald's, Wimpy and informal vendors. For KFC, the opportunity isn't daypart coverage - it's owning the daily ritual that builds the deepest visit habit.</div></div>
           <div class="mx-chip" data-chip="cloud" data-def="watch"><div class="ct">Dark kitchens</div><div class="cd">At a 17.4% CAGR, delivery-only operators are the fastest-growing foodservice format in SA with lower prices and no front-of-house cost that gets passed on to the customer.</div></div>
           <div class="mx-chip" data-chip="kaiia" data-def="hot"><div class="ct">The KAIIA opportunity</div><div class="cd">With an engaged audience connected to the ordering flow, menu and nutritional data, KFC can transform this capability from a marketing asset into a powerful sales tool.</div></div>
         </div>
@@ -1217,7 +1217,7 @@ h1.hero.revealed .hero-hint{opacity:0}
   </div>
 </section>
 
-<!-- ============ SECTION: MACRO PRESSURES — GAUGE TILES ============ -->
+<!-- ============ SECTION: MACRO PRESSURES - GAUGE TILES ============ -->
 <section id="pressures" class="pressures">
   <div class="p-wrap">
     <div class="sec-hd" data-reveal>
@@ -1234,8 +1234,8 @@ h1.hero.revealed .hero-hint{opacity:0}
       <div class="ctitle">Consumer economics</div>
       <div class="p-row">
         <div class="gauge high" data-g data-lvl="78"><div class="gauge-top"><div class="t">Economic growth (GDP)</div><div class="idx">HIGH PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">Slow growth caps spend, pushing consumers toward value meals, both in cost and quantity, over premium.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">Defend visit frequency through value-forward personalisation and tiered loyalty mechanics.</div></div></div>
-        <div class="gauge critical" data-g data-lvl="88"><div class="gauge-top"><div class="t">Interest rates & debt</div><div class="idx">CRITICAL PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">Higher rates squeeze discretionary spend and takeaways are often the first to be cut out.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">Loyalty tiers must make every KFC visit feel earned — not just the value range.</div></div></div>
-        <div class="gauge high" data-g data-lvl="72"><div class="gauge-top"><div class="t">Consumer confidence</div><div class="idx">HIGH PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">Low confidence in economic growth caused by food inflation, high unemployment and debt pressures drives demand for promotions, bundles and loyalty rewards.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">Generous bundling and premium formats must work in tandem — value defends frequency, premium widens margin.</div></div></div>
+        <div class="gauge critical" data-g data-lvl="88"><div class="gauge-top"><div class="t">Interest rates & debt</div><div class="idx">CRITICAL PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">Higher rates squeeze discretionary spend and takeaways are often the first to be cut out.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">Loyalty tiers must make every KFC visit feel earned - not just the value range.</div></div></div>
+        <div class="gauge high" data-g data-lvl="72"><div class="gauge-top"><div class="t">Consumer confidence</div><div class="idx">HIGH PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">Low confidence in economic growth caused by food inflation, high unemployment and debt pressures drives demand for promotions, bundles and loyalty rewards.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">Generous bundling and premium formats must work in tandem - value defends frequency, premium widens margin.</div></div></div>
       </div>
     </div>
 
@@ -1245,7 +1245,7 @@ h1.hero.revealed .hero-hint{opacity:0}
       <div class="p-row">
         <div class="gauge critical" data-g data-lvl="85"><div class="gauge-top"><div class="t">Fuel & delivery costs</div><div class="idx">CRITICAL PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">Rising fuel prices increase delivery and logistics costs, making convenience more expensive for both businesses and customers.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">Dark kitchen and delivery hub formats reduce last-mile cost exposure compared to full-format stores.</div></div></div>
         <div class="gauge high" data-g data-lvl="70"><div class="gauge-top"><div class="t">Global supply volatility</div><div class="idx">HIGH PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">Supply chain shocks, conflict and currency volatility compress QSR margins and continue to create uncertainty in future growth.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">Local sourcing + menu flex becomes a genuine competitive moat.</div></div></div>
-        <div class="gauge med" data-g data-lvl="55"><div class="gauge-top"><div class="t">Social responsibility</div><div class="idx">MODERATE PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">Consumer behaviour is increasingly putting social pressure on brands to act ethically and be transparent about impact.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">Community + provenance storytelling earns premium — fits the KASI format.</div></div></div>
+        <div class="gauge med" data-g data-lvl="55"><div class="gauge-top"><div class="t">Social responsibility</div><div class="idx">MODERATE PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">Consumer behaviour is increasingly putting social pressure on brands to act ethically and be transparent about impact.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">Community + provenance storytelling earns premium - fits the KASI format.</div></div></div>
       </div>
     </div>
 
@@ -1253,9 +1253,9 @@ h1.hero.revealed .hero-hint{opacity:0}
       <div class="ch">Cluster 03</div>
       <div class="ctitle">Product expectations</div>
       <div class="p-row">
-        <div class="gauge high" data-g data-lvl="68"><div class="gauge-top"><div class="t">Food quality & health</div><div class="idx">HIGH PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">There is a powerful and continuous shift toward food perceived as fresh, clean and made with higher quality ingredients.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">"Fresher / lighter" SKUs under a sub-brand — sidesteps the fried-chicken ceiling.</div></div></div>
-        <div class="gauge med" data-g data-lvl="50"><div class="gauge-top"><div class="t">Dietary inclusivity</div><div class="idx">MODERATE PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">Consumers place higher value on menus that handle vegetarian, gluten-sensitive and other preferences.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">Plant & allergen flex unlocks group occasions — nobody loses their pick.</div></div></div>
-        <div class="gauge critical" data-g data-lvl="90"><div class="gauge-top"><div class="t">Experience & convenience</div><div class="idx">CRITICAL PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">Effortless digital, personalised offers, reliable delivery are table stakes.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">Digital experience and personalisation are now baseline expectations — the question is how quickly KFC can make its offer feel uniquely its own.</div></div></div>
+        <div class="gauge high" data-g data-lvl="68"><div class="gauge-top"><div class="t">Food quality & health</div><div class="idx">HIGH PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">There is a powerful and continuous shift toward food perceived as fresh, clean and made with higher quality ingredients.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">"Fresher / lighter" SKUs under a sub-brand - sidesteps the fried-chicken ceiling.</div></div></div>
+        <div class="gauge med" data-g data-lvl="50"><div class="gauge-top"><div class="t">Dietary inclusivity</div><div class="idx">MODERATE PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">Consumers place higher value on menus that handle vegetarian, gluten-sensitive and other preferences.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">Plant & allergen flex unlocks group occasions - nobody loses their pick.</div></div></div>
+        <div class="gauge critical" data-g data-lvl="90"><div class="gauge-top"><div class="t">Experience & convenience</div><div class="idx">CRITICAL PRESSURE</div></div><div class="gauge-meter"><svg viewBox="0 0 140 70"><path class="gauge-arc" d="M10 65 A 60 60 0 0 1 130 65"/><path class="gauge-arc-fill" d="M10 65 A 60 60 0 0 1 130 65"/></svg><div class="gauge-needle"></div></div><div class="gauge-d">Effortless digital, personalised offers, reliable delivery are table stakes.</div><div class="gauge-imp"><div class="il">KFC IMPLICATION</div><div class="ii">Digital experience and personalisation are now baseline expectations - the question is how quickly KFC can make its offer feel uniquely its own.</div></div></div>
       </div>
     </div>
   </div>
@@ -1278,7 +1278,7 @@ h1.hero.revealed .hero-hint{opacity:0}
       <div>
         <div class="lbl">THE INNOVATION FRAMEWORK</div>
         <h2 style="color:#fff">Six spaces where KFC's <em>next bets will live.</em></h2>
-        <div class="sub">Not every space applies to every bet — together they map the full territory where KFC's growth can come from, and give us a shared language for finding and ranking what's worth pursuing.</div>
+        <div class="sub">Not every space applies to every bet - together they map the full territory where KFC's growth can come from, and give us a shared language for finding and ranking what's worth pursuing.</div>
       </div>
     </div>
     <div class="fw-wheel-wrap">
@@ -1305,7 +1305,7 @@ h1.hero.revealed .hero-hint{opacity:0}
         <div class="fd-lbl">SELECTED LEVER</div>
         <div class="fd-n" id="fdN">№ 01</div>
         <div class="fd-t" id="fdT">Targeting <em>new markets</em>.</div>
-        <div class="fd-d" id="fdD">Entering new geographies, customer segments and occasions where KFC has right to win — the entry points that widen the total addressable market.</div>
+        <div class="fd-d" id="fdD">Entering new geographies, customer segments and occasions where KFC has right to win - the entry points that widen the total addressable market.</div>
         <div class="fd-ex-lbl">LIVE IN THE PORTFOLIO · KFC EXAMPLES</div>
         <div class="fd-ex" id="fdEx"></div>
         <div class="fd-auto"><span class="pulse"></span><span id="fdHint">HOVER A HEX · OR WATCH IT CYCLE</span></div>
@@ -1315,7 +1315,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 </section>
 
 <!-- ============ CHAPTER 03 DIVIDER ============ -->
-<section class="chapter-div all-dark" data-chap>
+<section class="chapter-div to-dark" data-chap>
   <div class="rule"></div>
   <div class="cc">
     <div class="num">Chapter · 03</div>
@@ -1331,13 +1331,13 @@ h1.hero.revealed .hero-hint{opacity:0}
       <div class="k-kicker" data-reveal><span class="num">01</span> BIG IDEA · PERSONALISATION</div>
       <h1 class="k-h1" data-reveal-words><span class="w">The</span> <span class="w">KFC</span> <span class="w"><em>Kraver.</em></span></h1>
       <div class="k-tag" data-reveal>An AI-powered craving engine. <span class="acc">Configuring your cravings.</span></div>
-      <div class="k-desc" data-reveal>Every interaction — order, time, location, weather, sentiment — builds a living taste profile. The Kraver surfaces personalised combos, limited offers, and new menu items before the consumer even knows they want them. It turns the app from a transaction into a relationship.</div>
+      <div class="k-desc" data-reveal>Every interaction - order, time, location, weather, sentiment - builds a living taste profile. The Kraver surfaces personalised combos, limited offers, and new menu items before the consumer even knows they want them. It turns the app from a transaction into a relationship.</div>
       <div class="k-metrics" data-reveal>
         <div class="m"><div class="v">+12<span class="small">–18%</span></div><div class="l">BASKET UPLIFT</div></div>
         <div class="m"><div class="v">2.4<span class="small">×</span></div><div class="l">REORDER FREQUENCY</div></div>
         <div class="m"><div class="v">94<span class="small">%</span></div><div class="l">MATCH CONFIDENCE</div></div>
       </div>
-      <div class="k-cta" data-reveal><span class="dot"></span>TRY THE ENGINE — RIGHT →</div>
+      <div class="k-cta" data-reveal><span class="dot"></span>TRY THE ENGINE - RIGHT →</div>
       <div class="k-signals" data-reveal>
         <div class="slbl">WHAT THE ENGINE IS READING</div>
         <div class="sigs" id="sigs">
@@ -1352,7 +1352,7 @@ h1.hero.revealed .hero-hint{opacity:0}
     </div>
 
     <div class="k-right">
-      <div class="demo-label"><span class="live"></span>LIVE DEMO — TAP TO PLAY</div>
+      <div class="demo-label"><span class="live"></span>LIVE DEMO - TAP TO PLAY</div>
       <div class="phone-frame">
         <div class="phone-glow"></div>
         <div class="phone">
@@ -1455,7 +1455,7 @@ h1.hero.revealed .hero-hint{opacity:0}
         <div class="venue-scene-box" id="venueBox">
           <div class="venue-banner" id="venueBanner">LIVE AT WANDERERS</div>
 
-          <!-- WANDERERS — Cricket stadium -->
+          <!-- WANDERERS - Cricket stadium -->
           <div class="venue-scene active" data-scene="0">
             <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
               <defs>
@@ -1496,7 +1496,7 @@ h1.hero.revealed .hero-hint{opacity:0}
             </svg>
           </div>
 
-          <!-- KIRSTENBOSCH — Sunset concert -->
+          <!-- KIRSTENBOSCH - Sunset concert -->
           <div class="venue-scene" data-scene="1">
             <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
               <defs>
@@ -1538,7 +1538,7 @@ h1.hero.revealed .hero-hint{opacity:0}
             </svg>
           </div>
 
-          <!-- KINGSMEAD — Day/night cricket, coast -->
+          <!-- KINGSMEAD - Day/night cricket, coast -->
           <div class="venue-scene" data-scene="2">
             <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
               <defs>
@@ -1569,7 +1569,7 @@ h1.hero.revealed .hero-hint{opacity:0}
             </svg>
           </div>
 
-          <!-- OPPIKOPPI — Festival main stage -->
+          <!-- OPPIKOPPI - Festival main stage -->
           <div class="venue-scene" data-scene="3">
             <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
               <defs>
@@ -1626,7 +1626,7 @@ h1.hero.revealed .hero-hint{opacity:0}
             </svg>
           </div>
 
-          <!-- KYALAMI — Motorsport paddock -->
+          <!-- KYALAMI - Motorsport paddock -->
           <div class="venue-scene" data-scene="4">
             <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
               <defs>
@@ -1738,18 +1738,18 @@ h1.hero.revealed .hero-hint{opacity:0}
       <div class="k-kicker" data-reveal><span class="num">02</span> BIG IDEA · REIMAGINING FORMATS</div>
       <h1 class="k-h1" data-reveal-words><span class="w">The</span> <span class="w"><em>KASI</em></span> <span class="w">Kitchen.</span></h1>
       <div class="k-tag" data-reveal>A premium mobile KFC that moves with culture. <span class="acc">Stadiums, festivals, hospitality.</span></div>
-      <div class="k-desc" data-reveal>Premium KFC food trucks that land at cricket tests, summer festivals, motorsport hospitality and sunset concerts — breaking KFC into the mid- and upper-tier market. A modular format with a curated premium menu, co-branded with the event, at a different price point per occasion.</div>
+      <div class="k-desc" data-reveal>Premium KFC food trucks that land at cricket tests, summer festivals, motorsport hospitality and sunset concerts - breaking KFC into the mid- and upper-tier market. A modular format with a curated premium menu, co-branded with the event, at a different price point per occasion.</div>
 
       <div class="k-target" data-reveal>
         <div class="kt-lbl">WHO IT UNLOCKS</div>
         <div class="kt-row">
           <div class="kt-seg">
             <div class="kt-t">MID-MARKET</div>
-            <div class="kt-d">The weekend-cricket, festival-going consumer KFC rarely reaches in-store — now served in their own occasion.</div>
+            <div class="kt-d">The weekend-cricket, festival-going consumer KFC rarely reaches in-store - now served in their own occasion.</div>
           </div>
           <div class="kt-seg premium">
             <div class="kt-t">PREMIUM</div>
-            <div class="kt-d">Hospitality suites, wine-estate concerts, motorsport paddocks — a price-point KFC has never competed for.</div>
+            <div class="kt-d">Hospitality suites, wine-estate concerts, motorsport paddocks - a price-point KFC has never competed for.</div>
           </div>
         </div>
       </div>
@@ -1782,7 +1782,7 @@ h1.hero.revealed .hero-hint{opacity:0}
       <div class="k-kicker" data-reveal><span class="num">03</span> BIG IDEA · LOYALTY · DIGITAL MUSCLE</div>
       <h1 class="k-h1" data-reveal-words><span class="w">The</span> <span class="w"><em>Colonel</em></span> <span class="w">Club.</span></h1>
       <div class="k-tag" data-reveal>A currency that behaves more like <span class="acc">culture</span> than points.</div>
-      <div class="k-desc" data-reveal>Points accrue across in-store, app, delivery and social. Redemption stretches beyond food — match tickets, merch drops, gaming credits, charity. A first-party data backbone KFC fully owns, closing the commercial loop KAIIA has been teeing up.</div>
+      <div class="k-desc" data-reveal>Points accrue across in-store, app, delivery and social. Redemption stretches beyond food - match tickets, merch drops, gaming credits, charity. A first-party data backbone KFC fully owns, closing the commercial loop KAIIA has been teeing up.</div>
 
       <div class="k-metrics" data-reveal>
         <div class="m"><div class="v">3 <span class="small">tiers</span></div><div class="l">CRUNCH · BUCKET · COLONEL</div></div>
@@ -1837,7 +1837,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 </section>
 
 <!-- ============ CHAPTER 04 DIVIDER ============ -->
-<section class="chapter-div to-cream" data-chap>
+<section class="chapter-div to-dark" data-chap>
   <div class="rule"></div>
   <div class="cc">
     <div class="num">Chapter · 04</div>
@@ -1853,7 +1853,7 @@ h1.hero.revealed .hero-hint{opacity:0}
       <div>
         <div class="lbl">THE INNOVATION HUB · OPERATING MODEL</div>
         <h2>Connected to the vision. <em>Free to move.</em></h2>
-        <div class="sub">The Hub runs alongside the core business — aligned to the same strategic vision, reporting to the same leadership, but freed from day-to-day operational drag to move at the speed innovation requires.</div>
+        <div class="sub">The Hub runs alongside the core business - aligned to the same strategic vision, reporting to the same leadership, but freed from day-to-day operational drag to move at the speed innovation requires.</div>
       </div>
     </div>
 
@@ -1883,7 +1883,7 @@ h1.hero.revealed .hero-hint{opacity:0}
         <div class="mb-walk-prog" id="mbProg"></div>
       </div>
 
-      <div class="mb-steerco" data-tl="STEERING COUNCIL" data-td="Sets the innovation ambition, unlocks funding and removes blockers. Keeps the Hub connected to KFC's strategic vision — not a separate agenda, the same one.">
+      <div class="mb-steerco" data-tl="STEERING COUNCIL" data-td="Sets the innovation ambition, unlocks funding and removes blockers. Keeps the Hub connected to KFC's strategic vision - not a separate agenda, the same one.">
         <div class="mb-sc-lbl">STEERING COUNCIL</div>
         <div class="mb-sc-sub">Sets direction · Unlocks funding · Connected to KFC vision</div>
       </div>
@@ -1893,7 +1893,7 @@ h1.hero.revealed .hero-hint{opacity:0}
       <div class="mb-hub">
         <div class="hlbl">◆ THE INNOVATION HUB ◆</div>
 
-        <div class="mb-lh" data-tl="LIGHTHOUSE TEAM" data-td="The permanent core of the Hub — small, always-on, running the exploration loop, managing the portfolio, and assembling execution squads when a bet earns the right to build.">
+        <div class="mb-lh" data-tl="LIGHTHOUSE TEAM" data-td="The permanent core of the Hub - small, always-on, running the exploration loop, managing the portfolio, and assembling execution squads when a bet earns the right to build.">
           <div class="mb-lh-lbl">LIGHTHOUSE TEAM · ALWAYS ON</div>
           <div class="mb-lh-roles">Hub Lead · Insights &amp; Data · Design · Technology</div>
         </div>
@@ -1904,7 +1904,7 @@ h1.hero.revealed .hero-hint{opacity:0}
             <div class="mb-flow" data-tip-group>
               <div class="stp" data-tl="SCAN" data-td="Always-on reading of consumer, competitor, channel and technology signals to surface opportunity spaces.">SCAN</div>
               <div class="arr">→</div>
-              <div class="stp" data-tl="SHAPE" data-td="Turning a raw signal into a structured concept — proposition, customer, model — worth testing.">SHAPE</div>
+              <div class="stp" data-tl="SHAPE" data-td="Turning a raw signal into a structured concept - proposition, customer, model - worth testing.">SHAPE</div>
               <div class="arr">→</div>
               <div class="stp" data-tl="TEST" data-td="Rapid prototyping and lightweight pilots to pressure-test demand before real capital is committed.">TEST</div>
               <div class="arr">→</div>
@@ -1916,7 +1916,7 @@ h1.hero.revealed .hero-hint{opacity:0}
           <div class="mb-gear g2">
             <div class="mb-gear-lbl">GEAR 2 · EXECUTION · SQUADS ACTIVATED</div>
             <div class="mb-flow" data-tip-group>
-              <div class="stp" data-tl="BUILD" data-td="Stand up the venture — tech, ops, people, legal — as a ring-fenced unit with its own P&amp;L and operating rhythm.">BUILD</div>
+              <div class="stp" data-tl="BUILD" data-td="Stand up the venture - tech, ops, people, legal - as a ring-fenced unit with its own P&amp;L and operating rhythm.">BUILD</div>
               <div class="arr">→</div>
               <div class="stp" data-tl="LAUNCH" data-td="Go-live in a contained market, instrumented for learning from day one.">LAUNCH</div>
               <div class="arr">→</div>
@@ -1930,13 +1930,13 @@ h1.hero.revealed .hero-hint{opacity:0}
           <div class="it" data-tl="KRAVER" data-td="Hyper-personalized value offerings that leverage AI to cater to in-the-moment gratification at scale.">KRAVER</div>
           <div class="it" data-tl="KASI KITCHEN" data-td="Mobile kitchens that follow festivals, sporting and food events and prominent community socialization.">KASI KITCHEN</div>
           <div class="it" data-tl="COLONEL CLUB" data-td="Tiered loyalty that rewards frequency, unlocks margin data, and turns occasional buyers into regulars.">COLONEL CLUB</div>
-          <div class="it" data-tl="NEXT BET" data-td="Reserved slot — the next opportunity space promoted in from Scan/Shape/Test.">NEXT BET</div>
-          <div class="it" data-tl="NEXT BET" data-td="Reserved slot — the portfolio is always refreshing.">NEXT BET</div>
+          <div class="it" data-tl="NEXT BET" data-td="Reserved slot - the next opportunity space promoted in from Scan/Shape/Test.">NEXT BET</div>
+          <div class="it" data-tl="NEXT BET" data-td="Reserved slot - the portfolio is always refreshing.">NEXT BET</div>
         </div>
 
         <div class="mb-sub">CAPABILITIES</div>
         <div class="mb-enablers" data-tip-group>
-          <div class="e" data-tl="TECHNOLOGY" data-td="The tech backbone that enables the Hub to move fast — platforms, integrations and infrastructure supporting both exploration and execution.">TECHNOLOGY</div>
+          <div class="e" data-tl="TECHNOLOGY" data-td="The tech backbone that enables the Hub to move fast - platforms, integrations and infrastructure supporting both exploration and execution.">TECHNOLOGY</div>
           <div class="e" data-tl="AI &amp; DATA" data-td="Signal detection, concept screening, synthetic testing and always-on performance dashboards.">AI &amp; DATA</div>
           <div class="e" data-tl="BRAND &amp; DESIGN" data-td="Protects KFC equity across new formats and keeps every launch brand-consistent.">BRAND &amp; DESIGN</div>
           <div class="e" data-tl="OPERATIONS &amp; SUPPLY" data-td="Kitchen, franchise and delivery capability to bring concepts to life in the real world.">OPERATIONS &amp; SUPPLY</div>
@@ -1946,7 +1946,7 @@ h1.hero.revealed .hero-hint{opacity:0}
       <div class="mb-link" style="background:linear-gradient(180deg,var(--p),rgba(0,0,0,.15))"></div>
 
       <div class="mb-kfc">
-        <div class="box" data-tl="KFC AFRICA · CORE BUSINESS" data-td="Proven bets graduate from the Hub into the core business — or scale as adjacent ventures. The Hub is always aligned to the same strategic vision and reports to the same leadership.">KFC AFRICA · CORE BUSINESS<small>PROVEN BETS GRADUATE HERE</small></div>
+        <div class="box" data-tl="KFC AFRICA · CORE BUSINESS" data-td="Proven bets graduate from the Hub into the core business - or scale as adjacent ventures. The Hub is always aligned to the same strategic vision and reports to the same leadership.">KFC AFRICA · CORE BUSINESS<small>PROVEN BETS GRADUATE HERE</small></div>
       </div>
 
       <div class="mb-tip" id="mbTip">
@@ -1973,7 +1973,7 @@ h1.hero.revealed .hero-hint{opacity:0}
       <div class="bar"></div>
       <div>
         <div class="lbl">RECOMMENDED ENGAGEMENT MODEL</div>
-        <h2 style="color:#fff">Three phases — from <em>engine build</em> to continuous scale.</h2>
+        <h2 style="color:#fff">Three phases - from <em>engine build</em> to continuous scale.</h2>
       </div>
     </div>
 
@@ -1982,13 +1982,13 @@ h1.hero.revealed .hero-hint{opacity:0}
         <div class="st-num">Phase 01</div>
         <div class="st-dur">~12 WEEKS</div>
         <div class="st-title">Build &amp; Test.</div>
-        <div class="st-sub">Stand up the Hub, scope the first opportunity spaces, build concept packs and run the first validation round — twelve weeks to a running engine.</div>
+        <div class="st-sub">Stand up the Hub, scope the first opportunity spaces, build concept packs and run the first validation round - twelve weeks to a running engine.</div>
         <ul class="pt-items">
           <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Innovation Hub Model</span><span class="chev">›</span></div><div class="pt-body">Operating model, governance, stage gates, decision rights and ways-of-working between KFC and the Hub.</div></li>
-          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">KFC of the Future Blueprint</span><span class="chev">›</span></div><div class="pt-body">A shared ambition and future-focused fact base — where KFC Africa plays and wins across the next 5–10 years.</div></li>
-          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Initial Pipeline & Portfolio</span><span class="chev">›</span></div><div class="pt-body">A first wave of opportunity spaces, triaged and ranked — the portfolio the Hub starts working.</div></li>
-          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Concept Packs + First Validation Round</span><span class="chev">›</span></div><div class="pt-body">Deep-dive packs on the top 3–5 bets — proposition, model, unit economics — plus a first round of AI-enabled testing on each.</div></li>
-          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Capability & Org Design</span><span class="chev">›</span></div><div class="pt-body">Roles, team shape and capability flow between KFC and the Hub — built, not borrowed.</div></li>
+          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">KFC of the Future Blueprint</span><span class="chev">›</span></div><div class="pt-body">A shared ambition and future-focused fact base - where KFC Africa plays and wins across the next 5–10 years.</div></li>
+          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Initial Pipeline & Portfolio</span><span class="chev">›</span></div><div class="pt-body">A first wave of opportunity spaces, triaged and ranked - the portfolio the Hub starts working.</div></li>
+          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Concept Packs + First Validation Round</span><span class="chev">›</span></div><div class="pt-body">Deep-dive packs on the top 3–5 bets - proposition, model, unit economics - plus a first round of AI-enabled testing on each.</div></li>
+          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Capability & Org Design</span><span class="chev">›</span></div><div class="pt-body">Roles, team shape and capability flow between KFC and the Hub - built, not borrowed.</div></li>
         </ul>
       </div>
 
@@ -1996,13 +1996,13 @@ h1.hero.revealed .hero-hint{opacity:0}
         <div class="st-num">Phase 02</div>
         <div class="st-dur">ONGOING</div>
         <div class="st-title">Fuel the Pipeline.</div>
-        <div class="st-sub">Keep the Hub loaded — always-on signal scanning, AI-enabled testing, and structured sprints that refresh the portfolio.</div>
+        <div class="st-sub">Keep the Hub loaded - always-on signal scanning, AI-enabled testing, and structured sprints that refresh the portfolio.</div>
         <ul class="pt-items">
           <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Continuous Scanning</span><span class="chev">›</span></div><div class="pt-body">An always-on read of consumer, competitor, channel and tech signals feeding new opportunity spaces.</div></li>
-          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">AI-Enabled Testing</span><span class="chev">›</span></div><div class="pt-body">Synthetic panels, concept screening and rapid qual — evidence in days, not quarters.</div></li>
-          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Challenge Framing</span><span class="chev">›</span></div><div class="pt-body">Sharp problem statements from KFC leadership — the Hub runs towards the right questions.</div></li>
-          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Innovation Sprints</span><span class="chev">›</span></div><div class="pt-body">Time-boxed teams pressure-test a concept end-to-end — from proposition to prototype to pilot.</div></li>
-          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Portfolio Refresh</span><span class="chev">›</span></div><div class="pt-body">Kill/continue gates keep the pipeline honest — capital follows evidence, not opinion.</div></li>
+          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">AI-Enabled Testing</span><span class="chev">›</span></div><div class="pt-body">Synthetic panels, concept screening and rapid qual - evidence in days, not quarters.</div></li>
+          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Challenge Framing</span><span class="chev">›</span></div><div class="pt-body">Sharp problem statements from KFC leadership - the Hub runs towards the right questions.</div></li>
+          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Innovation Sprints</span><span class="chev">›</span></div><div class="pt-body">Time-boxed teams pressure-test a concept end-to-end - from proposition to prototype to pilot.</div></li>
+          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Portfolio Refresh</span><span class="chev">›</span></div><div class="pt-body">Kill/continue gates keep the pipeline honest - capital follows evidence, not opinion.</div></li>
         </ul>
       </div>
 
@@ -2010,18 +2010,18 @@ h1.hero.revealed .hero-hint{opacity:0}
         <div class="st-num">Phase 03</div>
         <div class="st-dur">EXECUTION</div>
         <div class="st-title">Launch & Scale.</div>
-        <div class="st-sub">When a bet earns the right, we help design, build and launch it — then scale or hand it back to the core.</div>
+        <div class="st-sub">When a bet earns the right, we help design, build and launch it - then scale or hand it back to the core.</div>
         <ul class="pt-items">
-          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Stand Up New Businesses</span><span class="chev">›</span></div><div class="pt-body">Ring-fenced ventures with their own team, P&L and operating rhythm — built to move without drag.</div></li>
-          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Service Design & Build</span><span class="chev">›</span></div><div class="pt-body">Service, proposition and experience design — then the tech, ops and supply to make it real.</div></li>
+          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Stand Up New Businesses</span><span class="chev">›</span></div><div class="pt-body">Ring-fenced ventures with their own team, P&L and operating rhythm - built to move without drag.</div></li>
+          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Service Design & Build</span><span class="chev">›</span></div><div class="pt-body">Service, proposition and experience design - then the tech, ops and supply to make it real.</div></li>
           <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Go-to-Market Execution</span><span class="chev">›</span></div><div class="pt-body">Brand, channel, launch orchestration and franchise enablement to get live in-market.</div></li>
-          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Measurement & Iteration</span><span class="chev">›</span></div><div class="pt-body">Instrumented from day one — learn fast, adjust faster, know when to double down.</div></li>
-          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Unlock Playbook</span><span class="chev">›</span></div><div class="pt-body">Everything codified — so KFC can replicate, scale or spin off the next venture without us.</div></li>
+          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Measurement & Iteration</span><span class="chev">›</span></div><div class="pt-body">Instrumented from day one - learn fast, adjust faster, know when to double down.</div></li>
+          <li class="pt-item"><div class="pt-head"><span class="dot"></span><span class="nm">Unlock Playbook</span><span class="chev">›</span></div><div class="pt-body">Everything codified - so KFC can replicate, scale or spin off the next venture without us.</div></li>
         </ul>
       </div>
     </div>
 
-    <!-- Timeline — Gantt + Scrubber -->
+    <!-- Timeline - Gantt + Scrubber -->
     <div class="pt-tl" data-reveal>
       <div class="pt-tl-hd">
         <div>
@@ -2079,8 +2079,8 @@ h1.hero.revealed .hero-hint{opacity:0}
 
       <div class="gantt-readout">
         <div class="gro s1" id="groBuild"><div class="glbl">BUILD</div><div class="gtxt" id="groBuildT">Mandate & <em>Hub mobilised</em></div></div>
-        <div class="gro s2 dim" id="groFuel"><div class="glbl">FUEL</div><div class="gtxt" id="groFuelT">Begins month 2 — <em>innovation sprints &amp; AI testing</em> run in parallel.</div></div>
-        <div class="gro s3 dim" id="groLaunch"><div class="glbl">LAUNCH</div><div class="gtxt" id="groLaunchT">Activates month 4 — <em>design & build</em> on the first validated bet.</div></div>
+        <div class="gro s2 dim" id="groFuel"><div class="glbl">FUEL</div><div class="gtxt" id="groFuelT">Begins month 2 - <em>innovation sprints &amp; AI testing</em> run in parallel.</div></div>
+        <div class="gro s3 dim" id="groLaunch"><div class="glbl">LAUNCH</div><div class="gtxt" id="groLaunchT">Activates month 4 - <em>design & build</em> on the first validated bet.</div></div>
       </div>
     </div>
 
@@ -2088,7 +2088,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 </section>
 
 <!-- ============ CHAPTER 06 DIVIDER ============ -->
-<section class="chapter-div to-cream" data-chap>
+<section class="chapter-div to-dark" data-chap>
   <div class="rule"></div>
   <div class="cc">
     <div class="num">Chapter · 06</div>
@@ -2105,7 +2105,7 @@ h1.hero.revealed .hero-hint{opacity:0}
         <div class="bar"></div>
         <div>
           <div class="lbl">HOW WE WORK · GROWTH PRINCIPLES</div>
-          <h2>Four principles behind how we <em>deliver</em> — not just design.</h2>
+          <h2>Four principles behind how we <em>deliver</em> - not just design.</h2>
         </div>
       </div>
       <div class="principles" id="principles" data-reveal>
@@ -2171,7 +2171,7 @@ h1.hero.revealed .hero-hint{opacity:0}
       <div class="bar"></div>
       <div>
         <div class="lbl">CASE STUDIES · SELECTED WORK</div>
-        <h2 style="color:#fff">A recent engagement we've run — <em>end to end.</em></h2>
+        <h2 style="color:#fff">A recent engagement we've run - <em>end to end.</em></h2>
       </div>
     </div>
     <!-- Single full-width case study card -->
@@ -2277,22 +2277,22 @@ h1.hero.revealed .hero-hint{opacity:0}
 
     <h1 class="close-h" id="closeH"><span class="cw">A</span> <span class="cw">working</span> <span class="cw">session,</span><br><span class="cw"><em>when you're ready.</em></span></h1>
 
-    <div class="close-p" data-reveal>Align on ambition, scope, and the first three opportunity spaces worth shaping — then we stand up the Hub.</div>
+    <div class="close-p" data-reveal>Align on ambition, scope, and the first three opportunity spaces worth shaping - then we stand up the Hub.</div>
 
     <div class="close-sigs">
       <div class="close-sig" data-reveal data-acc="p">
         <div class="sg-n"><span>AMBITION</span><span class="num">01</span></div>
         <div class="sg-t">A permanent Innovation Hub inside KFC Africa.</div>
-        <div class="sg-d">Not a one-off programme — a capability owned by your team, built to run for years.</div>
+        <div class="sg-d">Not a one-off programme - a capability owned by your team, built to run for years.</div>
       </div>
       <div class="close-sig" data-reveal data-acc="r">
         <div class="sg-n"><span>SCOPE</span><span class="num">02</span></div>
         <div class="sg-t">A founding sprint → first pilots live in months.</div>
-        <div class="sg-d">Ambition, portfolio, operating model, tech backbone, and capability plan — running end-to-end.</div>
+        <div class="sg-d">Ambition, portfolio, operating model, tech backbone, and capability plan - running end-to-end.</div>
       </div>
       <div class="close-sig" data-reveal data-acc="w">
         <div class="sg-n"><span>FIRST 3 SPACES</span><span class="num">03</span></div>
-        <div class="sg-t">Navigate the six spaces — pick the first three worth shaping.</div>
+        <div class="sg-t">Navigate the six spaces - pick the first three worth shaping.</div>
         <div class="sg-d">We'll walk through the six innovation spaces together and align on where KFC's first bets should come from.</div>
       </div>
     </div>
