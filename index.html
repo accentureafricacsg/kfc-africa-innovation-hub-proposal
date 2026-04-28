@@ -917,6 +917,29 @@ h1.hero.revealed .hero-hint{opacity:0}
   body{cursor:auto}
   #cursor,#cursor-r{display:none}
 }
+
+/* ============ REDESIGNED MODEL BOARD ============ */
+.mb-steerco{padding:14px 28px;background:linear-gradient(135deg,rgba(161,0,255,.1),rgba(161,0,255,.04));border:1.5px solid rgba(161,0,255,.4);border-radius:12px;text-align:center;cursor:pointer;transition:all .3s;max-width:440px;margin:0 auto}
+.mb-steerco:hover{background:rgba(161,0,255,.18);border-color:var(--p);transform:translateY(-1px)}
+.mb-steerco.mb-active{outline:3px solid var(--red);outline-offset:4px;transform:scale(1.04) translateY(-2px)!important;box-shadow:0 0 0 6px rgba(228,0,43,.15),0 12px 24px rgba(228,0,43,.25);animation:mbPulse 1.2s ease-in-out infinite}
+.mb-sc-lbl{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--p);margin-bottom:4px}
+.mb-sc-sub{font-size:10px;color:#888;font-style:italic}
+.mb-lh{padding:12px 18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:10px;margin-bottom:14px;cursor:pointer;transition:all .3s;text-align:center}
+.mb-lh:hover{background:rgba(161,0,255,.08);border-color:rgba(161,0,255,.3)}
+.mb-lh.mb-active{outline:3px solid var(--red);outline-offset:4px;box-shadow:0 0 0 6px rgba(228,0,43,.15),0 12px 24px rgba(228,0,43,.25);animation:mbPulse 1.2s ease-in-out infinite}
+.mb-lh-lbl{font-size:9px;font-weight:800;letter-spacing:2.5px;color:var(--p3);margin-bottom:4px}
+.mb-lh-roles{font-size:11px;color:#888;font-style:italic}
+.mb-gears{display:grid;grid-template-columns:3fr 2fr;gap:10px;margin-bottom:14px}
+.mb-gear{padding:14px 12px;border-radius:10px}
+.mb-gear.g1{background:rgba(161,0,255,.04);border:1px solid rgba(161,0,255,.2)}
+.mb-gear.g2{background:rgba(228,0,43,.04);border:1px solid rgba(228,0,43,.18)}
+.mb-gear-lbl{font-size:8px;letter-spacing:2px;font-weight:800;margin-bottom:10px}
+.mb-gear.g1 .mb-gear-lbl{color:var(--p3)}
+.mb-gear.g2 .mb-gear-lbl{color:#ff5c7a}
+.mb-gear .mb-flow{flex-wrap:wrap;row-gap:6px}
+.mb-gate{font-size:8px;letter-spacing:1.5px;font-weight:800;color:var(--red);text-align:center;margin-top:10px;padding:6px 8px;border-top:1px dashed rgba(228,0,43,.3);cursor:pointer;transition:color .2s;border-radius:0 0 6px 6px}
+.mb-gate:hover{color:#ff5c7a}
+.mb-gate.mb-active{color:#fff;background:rgba(228,0,43,.15);outline:2px solid var(--red);outline-offset:2px;animation:mbPulse 1.2s ease-in-out infinite}
 </style>
 </head>
 <body>
@@ -1074,6 +1097,41 @@ h1.hero.revealed .hero-hint{opacity:0}
   <div class="hint pulse"><span class="line"></span><span>SCROLL</span><span class="arrow">↓</span><span class="line"></span></div>
 </section>
 
+<!-- ============ CONTENTS ============ -->
+<section id="contents" style="background:var(--ink2);padding:80px 48px 100px;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(161,0,255,.07),transparent 60%);pointer-events:none"></div>
+  <div style="max-width:860px;margin:0 auto;position:relative;z-index:2">
+    <div style="font-size:10px;letter-spacing:4px;font-weight:800;color:var(--p3);margin-bottom:48px;display:flex;align-items:center;gap:16px">AGENDA <span style="width:40px;height:1px;background:rgba(161,0,255,.4);display:inline-block"></span></div>
+    <div style="display:flex;flex-direction:column">
+      <a href="#insights" style="display:grid;grid-template-columns:64px 1fr 24px;gap:20px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.06);text-decoration:none;color:inherit;align-items:center;transition:padding .25s" onmouseover="this.style.paddingLeft='10px'" onmouseout="this.style.paddingLeft='0'">
+        <div style="font-family:var(--serif);font-style:italic;font-size:22px;color:var(--p3);line-height:1">01</div>
+        <div><div style="font-size:9px;letter-spacing:3px;font-weight:800;color:var(--text3);margin-bottom:5px">THE MARKET</div><div style="font-family:var(--serif);font-size:19px;font-weight:400;color:#fff;line-height:1.2">The world KFC Africa is pitching into.</div></div>
+        <div style="font-size:14px;color:var(--text3);opacity:.4">→</div>
+      </a>
+      <a href="#framework" style="display:grid;grid-template-columns:64px 1fr 24px;gap:20px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.06);text-decoration:none;color:inherit;align-items:center;transition:padding .25s" onmouseover="this.style.paddingLeft='10px'" onmouseout="this.style.paddingLeft='0'">
+        <div style="font-family:var(--serif);font-style:italic;font-size:22px;color:var(--p3);line-height:1">02</div>
+        <div><div style="font-size:9px;letter-spacing:3px;font-weight:800;color:var(--text3);margin-bottom:5px">THE LENS</div><div style="font-family:var(--serif);font-size:19px;font-weight:400;color:#fff;line-height:1.2">Six spaces where KFC's next bets will live.</div></div>
+        <div style="font-size:14px;color:var(--text3);opacity:.4">→</div>
+      </a>
+      <a href="#kraver" style="display:grid;grid-template-columns:64px 1fr 24px;gap:20px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.06);text-decoration:none;color:inherit;align-items:center;transition:padding .25s" onmouseover="this.style.paddingLeft='10px'" onmouseout="this.style.paddingLeft='0'">
+        <div style="font-family:var(--serif);font-style:italic;font-size:22px;color:var(--p3);line-height:1">03</div>
+        <div><div style="font-size:9px;letter-spacing:3px;font-weight:800;color:var(--text3);margin-bottom:5px">THREE IDEAS</div><div style="font-family:var(--serif);font-size:19px;font-weight:400;color:#fff;line-height:1.2">A taste of what we can do together.</div></div>
+        <div style="font-size:14px;color:var(--text3);opacity:.4">→</div>
+      </a>
+      <a href="#model" style="display:grid;grid-template-columns:64px 1fr 24px;gap:20px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.06);text-decoration:none;color:inherit;align-items:center;transition:padding .25s" onmouseover="this.style.paddingLeft='10px'" onmouseout="this.style.paddingLeft='0'">
+        <div style="font-family:var(--serif);font-style:italic;font-size:22px;color:var(--p3);line-height:1">04</div>
+        <div><div style="font-size:9px;letter-spacing:3px;font-weight:800;color:var(--text3);margin-bottom:5px">THE ENGINE</div><div style="font-family:var(--serif);font-size:19px;font-weight:400;color:#fff;line-height:1.2">The engine that keeps producing them.</div></div>
+        <div style="font-size:14px;color:var(--text3);opacity:.4">→</div>
+      </a>
+      <a href="#partner" style="display:grid;grid-template-columns:64px 1fr 24px;gap:20px;padding:24px 0;text-decoration:none;color:inherit;align-items:center;transition:padding .25s" onmouseover="this.style.paddingLeft='10px'" onmouseout="this.style.paddingLeft='0'">
+        <div style="font-family:var(--serif);font-style:italic;font-size:22px;color:var(--p3);line-height:1">05</div>
+        <div><div style="font-size:9px;letter-spacing:3px;font-weight:800;color:var(--text3);margin-bottom:5px">THE PARTNERSHIP</div><div style="font-family:var(--serif);font-size:19px;font-weight:400;color:#fff;line-height:1.2">How we'd partner with you.</div></div>
+        <div style="font-size:14px;color:var(--text3);opacity:.4">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CHAPTER 01 DIVIDER ============ -->
 <section class="chapter-div to-cream" data-chap>
   <div class="rule"></div>
@@ -1206,7 +1264,60 @@ h1.hero.revealed .hero-hint{opacity:0}
   <div class="rule"></div>
   <div class="cc">
     <div class="num">Chapter · 02</div>
-    <div class="t">Three bets <em>worth placing.</em></div>
+    <div class="t">Six spaces. The lens that <em>finds the bets.</em></div>
+  </div>
+</section>
+
+<!-- ============ INNOVATION FRAMEWORK ============ -->
+<section id="framework" class="section">
+  <div class="wrap">
+    <div class="sec-hd" data-reveal>
+      <div class="bar"></div>
+      <div>
+        <div class="lbl">THE INNOVATION FRAMEWORK</div>
+        <h2 style="color:#fff">Six spaces where KFC's <em>next bets will live.</em></h2>
+        <div class="sub">Not every space applies to every bet — together they map the full territory where KFC's growth can come from, and give us a shared language for finding and ranking what's worth pursuing.</div>
+      </div>
+    </div>
+    <div class="fw-wheel-wrap">
+      <div class="fw-wheel" id="fwWheel" data-reveal>
+        <svg viewBox="-220 -220 440 440">
+          <defs>
+            <radialGradient id="hexCore" cx="50%" cy="50%"><stop offset="0" stop-color="#1a1a2e"/><stop offset="1" stop-color="#050510"/></radialGradient>
+          </defs>
+          <!-- spokes -->
+          <g id="fwSpokes"></g>
+          <!-- outer hexes -->
+          <g id="fwOuter"></g>
+          <!-- core -->
+          <g class="hex-core">
+            <polygon points="-55,-32 0,-64 55,-32 55,32 0,64 -55,32"/>
+            <text class="cbrand" y="-20">KFC</text>
+            <text class="ctag" y="-4">ENABLERS</text>
+            <text class="ctag" y="12" style="fill:#ff5c7a">Data &amp; AI</text>
+            <text class="ctag" y="26" style="fill:#ff5c7a">· Insights</text>
+          </g>
+        </svg>
+      </div>
+      <div class="fw-detail" id="fwDetail" data-reveal>
+        <div class="fd-lbl">SELECTED LEVER</div>
+        <div class="fd-n" id="fdN">№ 01</div>
+        <div class="fd-t" id="fdT">Targeting <em>new markets</em>.</div>
+        <div class="fd-d" id="fdD">Entering new geographies, customer segments and occasions where KFC has right to win — the entry points that widen the total addressable market.</div>
+        <div class="fd-ex-lbl">LIVE IN THE PORTFOLIO · KFC EXAMPLES</div>
+        <div class="fd-ex" id="fdEx"></div>
+        <div class="fd-auto"><span class="pulse"></span><span id="fdHint">HOVER A HEX · OR WATCH IT CYCLE</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER 03 DIVIDER ============ -->
+<section class="chapter-div to-dark" data-chap>
+  <div class="rule"></div>
+  <div class="cc">
+    <div class="num">Chapter · 03</div>
+    <div class="t">Three ideas. <em>A taste of what we can do together.</em></div>
   </div>
 </section>
 
@@ -1723,59 +1834,6 @@ h1.hero.revealed .hero-hint{opacity:0}
   </div>
 </section>
 
-<!-- ============ CHAPTER 03 DIVIDER ============ -->
-<section class="chapter-div to-dark" data-chap>
-  <div class="rule"></div>
-  <div class="cc">
-    <div class="num">Chapter · 03</div>
-    <div class="t">The lens we use to <em>shape every bet.</em></div>
-  </div>
-</section>
-
-<!-- ============ INNOVATION FRAMEWORK ============ -->
-<section id="framework" class="section">
-  <div class="wrap">
-    <div class="sec-hd" data-reveal>
-      <div class="bar"></div>
-      <div>
-        <div class="lbl">THE INNOVATION FRAMEWORK</div>
-        <h2 style="color:#fff">Six levers. Supported by a <em>strong core.</em></h2>
-        <div class="sub">Every growth bet we generate for KFC lands in one of these six spaces, each pressure-tested against strategic fit, right-to-win and scale.</div>
-      </div>
-    </div>
-    <div class="fw-wheel-wrap">
-      <div class="fw-wheel" id="fwWheel" data-reveal>
-        <svg viewBox="-220 -220 440 440">
-          <defs>
-            <radialGradient id="hexCore" cx="50%" cy="50%"><stop offset="0" stop-color="#1a1a2e"/><stop offset="1" stop-color="#050510"/></radialGradient>
-          </defs>
-          <!-- spokes -->
-          <g id="fwSpokes"></g>
-          <!-- outer hexes -->
-          <g id="fwOuter"></g>
-          <!-- core -->
-          <g class="hex-core">
-            <polygon points="-55,-32 0,-64 55,-32 55,32 0,64 -55,32"/>
-            <text class="cbrand" y="-20">KFC</text>
-            <text class="ctag" y="-4">ENABLERS</text>
-            <text class="ctag" y="12" style="fill:#ff5c7a">Data &amp; AI</text>
-            <text class="ctag" y="26" style="fill:#ff5c7a">· Insights</text>
-          </g>
-        </svg>
-      </div>
-      <div class="fw-detail" id="fwDetail" data-reveal>
-        <div class="fd-lbl">SELECTED LEVER</div>
-        <div class="fd-n" id="fdN">№ 01</div>
-        <div class="fd-t" id="fdT">Targeting <em>new markets</em>.</div>
-        <div class="fd-d" id="fdD">Entering new geographies, customer segments and occasions where KFC has right to win — the entry points that widen the total addressable market.</div>
-        <div class="fd-ex-lbl">LIVE IN THE PORTFOLIO · KFC EXAMPLES</div>
-        <div class="fd-ex" id="fdEx"></div>
-        <div class="fd-auto"><span class="pulse"></span><span id="fdHint">HOVER A HEX · OR WATCH IT CYCLE</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ CHAPTER 04 DIVIDER ============ -->
 <section class="chapter-div to-cream" data-chap>
   <div class="rule"></div>
@@ -1792,8 +1850,8 @@ h1.hero.revealed .hero-hint{opacity:0}
       <div class="bar"></div>
       <div>
         <div class="lbl">THE INNOVATION HUB · OPERATING MODEL</div>
-        <h2>A permanent innovation engine — <em>separate</em> from BAU.</h2>
-        <div class="sub">The Hub sits outside day-to-day operations so it has the speed and autonomy to scan, test, validate and incubate growth opportunities — continuously.</div>
+        <h2>Connected to the vision. <em>Free to move.</em></h2>
+        <div class="sub">The Hub runs alongside the core business — aligned to the same strategic vision, reporting to the same leadership, but freed from day-to-day operational drag to move at the speed innovation requires.</div>
       </div>
     </div>
 
@@ -1810,35 +1868,59 @@ h1.hero.revealed .hero-hint{opacity:0}
     </div>
 
     <div class="model-board" data-reveal>
-      <div class="mb-kfc">
-        <div class="box" data-tl="KFC AFRICA" data-td="The core business. Engineered for today — serving millions of meals a day. The Hub sits outside this machine so innovation doesn't compete with run-the-business priorities.">KFC AFRICA · BUSINESS AS USUAL<small>DAY-TO-DAY OPERATIONS</small></div>
-      </div>
-      <div class="mb-link"></div>
 
-      <div class="mb-gov" data-tip-group>
-        <div class="g" data-tl="STEERING COUNCIL" data-td="Executive sponsors who set the ambition, unlock funding, and remove blockers. Meets monthly.">
-          <div class="t">STEERING COUNCIL</div><div class="d">ambition · funding · unblock</div>
+      <div class="mb-walk" data-reveal style="margin:0 0 28px;max-width:1040px">
+        <button class="mb-walk-play" id="mbPlay" aria-label="Play walkthrough">
+          <svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14" id="mbPlayIcon"/></svg>
+        </button>
+        <div>
+          <div class="mb-walk-lbl">GUIDED WALKTHROUGH</div>
+          <div class="mb-walk-cur" id="mbWalkCur">Press play to watch the engine run.</div>
         </div>
-        <div class="g" data-tl="HUB LEADERSHIP" data-td="Dedicated team running the engine day-to-day — portfolio calls, resource allocation, talent and partners.">
-          <div class="t">HUB LEADERSHIP</div><div class="d">portfolio · people · partners</div>
-        </div>
-        <div class="g" data-tl="STAGE GATES" data-td="Lightweight kill/continue decisions at Scan → Test → Validate → Incubate. Fund the winners, cut the rest.">
-          <div class="t">STAGE GATES</div><div class="d">fund · kill · continue</div>
-        </div>
+        <div class="mb-walk-dots" id="mbDots"></div>
+        <div class="mb-walk-prog" id="mbProg"></div>
       </div>
+
+      <div class="mb-steerco" data-tl="STEERING COUNCIL" data-td="Sets the innovation ambition, unlocks funding and removes blockers. Keeps the Hub connected to KFC's strategic vision — not a separate agenda, the same one.">
+        <div class="mb-sc-lbl">STEERING COUNCIL</div>
+        <div class="mb-sc-sub">Sets direction · Unlocks funding · Connected to KFC vision</div>
+      </div>
+
+      <div class="mb-link"></div>
 
       <div class="mb-hub">
         <div class="hlbl">◆ THE INNOVATION HUB ◆</div>
 
-        <div class="mb-sub">CONTINUOUS PROCESS</div>
-        <div class="mb-flow" data-tip-group>
-          <div class="stp" data-tl="SCAN" data-td="Always-on reading of consumer, competitor, channel and tech signals to surface opportunity spaces.">SCAN</div>
-          <div class="arr">→</div>
-          <div class="stp" data-tl="TEST" data-td="Rapid concept shaping — packs, prototypes, lightweight pilots to pressure-test demand before we spend real capital.">TEST</div>
-          <div class="arr">→</div>
-          <div class="stp" data-tl="VALIDATE" data-td="Real-world validation with customers, franchisees and partners. Evidence replaces opinion before we scale.">VALIDATE</div>
-          <div class="arr">→</div>
-          <div class="stp" data-tl="INCUBATE" data-td="Stand-up as a ring-fenced venture until it has proven unit economics and a path to the core.">INCUBATE</div>
+        <div class="mb-lh" data-tl="LIGHTHOUSE TEAM" data-td="The permanent core of the Hub — small, always-on, running the exploration loop, managing the portfolio, and assembling execution squads when a bet earns the right to build.">
+          <div class="mb-lh-lbl">LIGHTHOUSE TEAM · ALWAYS ON</div>
+          <div class="mb-lh-roles">Hub Lead · Insights &amp; Data · Design · Technology</div>
+        </div>
+
+        <div class="mb-gears">
+          <div class="mb-gear g1">
+            <div class="mb-gear-lbl">GEAR 1 · EXPLORATION · CONTINUOUS</div>
+            <div class="mb-flow" data-tip-group>
+              <div class="stp" data-tl="SCAN" data-td="Always-on reading of consumer, competitor, channel and technology signals to surface opportunity spaces.">SCAN</div>
+              <div class="arr">→</div>
+              <div class="stp" data-tl="SHAPE" data-td="Turning a raw signal into a structured concept — proposition, customer, model — worth testing.">SHAPE</div>
+              <div class="arr">→</div>
+              <div class="stp" data-tl="TEST" data-td="Rapid prototyping and lightweight pilots to pressure-test demand before real capital is committed.">TEST</div>
+              <div class="arr">→</div>
+              <div class="stp" data-tl="VALIDATE" data-td="Real-world validation with customers, franchisees and partners. Evidence replaces opinion before a bet earns the right to build.">VALIDATE</div>
+            </div>
+            <div class="mb-gate" data-tl="STAGE GATE" data-td="A lightweight go/no-go decision. Only bets with real evidence earn the right to move from exploration into execution.">▼ STAGE GATE · EARNS THE RIGHT TO BUILD</div>
+          </div>
+
+          <div class="mb-gear g2">
+            <div class="mb-gear-lbl">GEAR 2 · EXECUTION · SQUADS ACTIVATED</div>
+            <div class="mb-flow" data-tip-group>
+              <div class="stp" data-tl="BUILD" data-td="Stand up the venture — tech, ops, people, legal — as a ring-fenced unit with its own P&amp;L and operating rhythm.">BUILD</div>
+              <div class="arr">→</div>
+              <div class="stp" data-tl="LAUNCH" data-td="Go-live in a contained market, instrumented for learning from day one.">LAUNCH</div>
+              <div class="arr">→</div>
+              <div class="stp" data-tl="SCALE" data-td="Hand to the core business or grow as an adjacent venture once unit economics are proven.">SCALE</div>
+            </div>
+          </div>
         </div>
 
         <div class="mb-sub">LIVE PORTFOLIO (EXAMPLE)</div>
@@ -1846,32 +1928,28 @@ h1.hero.revealed .hero-hint{opacity:0}
           <div class="it" data-tl="KRAVER" data-td="Hyper-personalized value offerings that leverage AI to cater to in-the-moment gratification at scale.">KRAVER</div>
           <div class="it" data-tl="KASI KITCHEN" data-td="Mobile kitchens that follow festivals, sporting and food events and prominent community socialization.">KASI KITCHEN</div>
           <div class="it" data-tl="COLONEL CLUB" data-td="Tiered loyalty that rewards frequency, unlocks margin data, and turns occasional buyers into regulars.">COLONEL CLUB</div>
-          <div class="it" data-tl="NEXT BET" data-td="Reserved slot — the next opportunity space promoted in from Scan/Test.">NEXT BET</div>
+          <div class="it" data-tl="NEXT BET" data-td="Reserved slot — the next opportunity space promoted in from Scan/Shape/Test.">NEXT BET</div>
           <div class="it" data-tl="NEXT BET" data-td="Reserved slot — the portfolio is always refreshing.">NEXT BET</div>
         </div>
 
-        <div class="mb-sub">ENABLING LAYERS</div>
+        <div class="mb-sub">CAPABILITIES</div>
         <div class="mb-enablers" data-tip-group>
-          <div class="e" data-tl="AI & DATA" data-td="Signal detection, concept screening, synthetic testing and always-on performance dashboards.">AI & DATA</div>
-          <div class="e" data-tl="BRAND & DESIGN" data-td="Protects KFC equity across new formats and keeps every launch brand-consistent.">BRAND & DESIGN</div>
-          <div class="e" data-tl="OPERATIONS" data-td="Supply, kitchen, franchise and delivery capability to bring concepts to life in the real world.">OPERATIONS</div>
-          <div class="e" data-tl="PARTNERS" data-td="Startups, platforms, community partners and external capital that plug into the Hub.">PARTNERS</div>
+          <div class="e" data-tl="TECHNOLOGY" data-td="The tech backbone that enables the Hub to move fast — platforms, integrations and infrastructure supporting both exploration and execution.">TECHNOLOGY</div>
+          <div class="e" data-tl="AI &amp; DATA" data-td="Signal detection, concept screening, synthetic testing and always-on performance dashboards.">AI &amp; DATA</div>
+          <div class="e" data-tl="BRAND &amp; DESIGN" data-td="Protects KFC equity across new formats and keeps every launch brand-consistent.">BRAND &amp; DESIGN</div>
+          <div class="e" data-tl="OPERATIONS &amp; SUPPLY" data-td="Kitchen, franchise and delivery capability to bring concepts to life in the real world.">OPERATIONS &amp; SUPPLY</div>
         </div>
       </div>
 
-      <div class="mb-ttm">
-        <div class="ttm-lbl">TAKE-TO-MARKET</div>
-        <div class="ttm-row" data-tip-group>
-          <div class="ph" data-tl="DESIGN" data-td="Service, proposition and experience design once an idea earns incubation.">DESIGN</div>
-          <div class="ph" data-tl="BUILD" data-td="Stand up the venture — tech, ops, people, legal — as a ring-fenced unit.">BUILD</div>
-          <div class="ph" data-tl="LAUNCH" data-td="Go-live in a contained market, instrumented for learning from day one.">LAUNCH</div>
-          <div class="ph" data-tl="SCALE" data-td="Hand back to the core business or scale as an adjacent venture once economics are proven.">SCALE</div>
-        </div>
+      <div class="mb-link" style="background:linear-gradient(180deg,var(--p),rgba(0,0,0,.15))"></div>
+
+      <div class="mb-kfc">
+        <div class="box" data-tl="KFC AFRICA · CORE BUSINESS" data-td="Proven bets graduate from the Hub into the core business — or scale as adjacent ventures. The Hub is always aligned to the same strategic vision and reports to the same leadership.">KFC AFRICA · CORE BUSINESS<small>PROVEN BETS GRADUATE HERE</small></div>
       </div>
 
       <div class="mb-tip" id="mbTip">
         <div class="tl">HOVER ANY ELEMENT · OR PRESS PLAY</div>
-        <div class="td">Move across the diagram to explore how governance, the continuous process, the live portfolio, enabling layers and take-to-market fit together.</div>
+        <div class="td">Move across the diagram to explore how governance, the exploration and execution gears, the live portfolio and capabilities fit together.</div>
       </div>
     </div>
   </div>
