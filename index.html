@@ -74,11 +74,6 @@ a{color:inherit;text-decoration:none}
 .pal-item .pgo{opacity:0;transition:opacity .2s;font-size:11px;letter-spacing:2px;color:var(--p3);font-weight:700}
 .pal-item.sel .pgo,.pal-item:hover .pgo{opacity:1}
 
-#progress{position:fixed;bottom:62px;right:32px;width:54px;height:54px;z-index:50;pointer-events:auto}
-#progress svg{transform:rotate(-90deg)}
-#progress .pr-bg{stroke:rgba(255,255,255,.08)}
-#progress .pr-fg{stroke:var(--p);stroke-linecap:round;transition:stroke-dashoffset .2s linear}
-#progress .lbl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:1.5px;font-weight:700;color:var(--text2)}
 
 /* Nav hint */
 .hint{position:fixed;bottom:34px;left:50%;transform:translateX(-50%);z-index:50;font-size:9px;letter-spacing:3px;color:var(--text3);font-weight:600;pointer-events:none;display:flex;align-items:center;gap:10px}
@@ -1069,11 +1064,6 @@ h1.hero.revealed .hero-hint{opacity:0}
   </div>
   <div class="pal-list" id="palList"></div>
 </div></div>
-
-<div id="progress">
-  <svg width="54" height="54"><circle class="pr-bg" cx="27" cy="27" r="22" fill="none" stroke-width="2"/><circle class="pr-fg" cx="27" cy="27" r="22" fill="none" stroke-width="2" stroke-dasharray="138.23" stroke-dashoffset="138.23"/></svg>
-  <div class="lbl" id="pr-lbl">01</div>
-</div>
 
 <!-- ============ COVER ============ -->
 <section id="cover">
@@ -2444,9 +2434,6 @@ const ioChap = new IntersectionObserver((entries)=>{
 document.querySelectorAll('[data-chap]').forEach(el=>ioChap.observe(el));
 
 /* ==================== PROGRESS RING + CHAPTER TRACKING ==================== */
-const prFg = document.querySelector('.pr-fg');
-const prLbl = document.getElementById('pr-lbl');
-const CIRC = 138.23;
 const topChrome = document.querySelector('.top-chrome');
 const chapterDefs = [
   {id:'cover',     name:'Cover',              sub:'Tomorrow\'s KFC. Now.'},
@@ -2476,9 +2463,7 @@ const pbCT = document.getElementById('pbCT');
 window.addEventListener('scroll',()=>{
   const maxScroll = Math.max(1, document.documentElement.scrollHeight - document.documentElement.clientHeight);
   const scrolled = Math.min(1, window.scrollY / maxScroll);
-  prFg.style.strokeDashoffset = CIRC*(1-scrolled);
   const c = currentChapter();
-  prLbl.textContent = String(c+1).padStart(2,'0');
   pbCN.textContent = String(c+1).padStart(2,'0');
   pbCT.textContent = chapterDefs[c].name.toUpperCase();
   pbarFill.style.width = (scrolled*100)+'%';
