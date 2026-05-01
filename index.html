@@ -2554,7 +2554,7 @@ const chapterDefs = [
 ];
 const chapterSections = chapterDefs.map(c=>c.id);
 function currentChapter(){
-  const y = window.scrollY + window.innerHeight*.4;
+  const y = window.scrollY + window.innerHeight*.6;
   let n = 0;
   chapterSections.forEach((id,i)=>{
     const el = document.getElementById(id);
