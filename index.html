@@ -1140,7 +1140,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 </section>
 
 <!-- ============ CHAPTER 01 DIVIDER ============ -->
-<section class="chapter-div to-cream" data-chap>
+<section id="chap1" class="chapter-div to-cream" data-chap>
   <div class="rule"></div>
   <div class="cc">
     <div class="num">Chapter · 01</div>
@@ -1267,7 +1267,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 </section>
 
 <!-- ============ CHAPTER 02 DIVIDER ============ -->
-<section class="chapter-div all-dark" data-chap>
+<section id="chap2" class="chapter-div all-dark" data-chap>
   <div class="rule"></div>
   <div class="cc">
     <div class="num">Chapter · 02</div>
@@ -1320,7 +1320,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 </section>
 
 <!-- ============ CHAPTER 03 DIVIDER ============ -->
-<section class="chapter-div all-dark" data-chap>
+<section id="chap3" class="chapter-div all-dark" data-chap>
   <div class="rule"></div>
   <div class="cc">
     <div class="num">Chapter · 03</div>
@@ -1842,7 +1842,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 </section>
 
 <!-- ============ CHAPTER 04 DIVIDER ============ -->
-<section class="chapter-div to-cream" data-chap>
+<section id="chap4" class="chapter-div to-cream" data-chap>
   <div class="rule"></div>
   <div class="cc">
     <div class="num">Chapter · 04</div>
@@ -1963,7 +1963,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 </section>
 
 <!-- ============ CHAPTER 05 DIVIDER ============ -->
-<section class="chapter-div to-dark" data-chap>
+<section id="chap5" class="chapter-div to-dark" data-chap>
   <div class="rule"></div>
   <div class="cc">
     <div class="num">Chapter · 05</div>
@@ -2146,7 +2146,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 </section>
 
 <!-- ============ CHAPTER 06 DIVIDER ============ -->
-<section class="chapter-div to-cream" data-chap>
+<section id="chap6" class="chapter-div to-cream" data-chap>
   <div class="rule"></div>
   <div class="cc">
     <div class="num">Chapter · 06</div>
@@ -2214,7 +2214,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 </section>
 
 <!-- ============ CHAPTER 07 DIVIDER ============ -->
-<section class="chapter-div to-dark" data-chap>
+<section id="chap7" class="chapter-div to-dark" data-chap>
   <div class="rule"></div>
   <div class="cc">
     <div class="num">Chapter · 07</div>
@@ -2542,15 +2542,15 @@ document.querySelectorAll('[data-chap]').forEach(el=>ioChap.observe(el));
 /* ==================== PROGRESS RING + CHAPTER TRACKING ==================== */
 const topChrome = document.querySelector('.top-chrome');
 const chapterDefs = [
-  {id:'cover',     name:'Cover',              sub:'Tomorrow\'s KFC. Now.',                num:''},
-  {id:'insights',  name:'Insights & Trends',  sub:'The world KFC is pitching into',       num:'01'},
-  {id:'framework', name:'Innovation Framework', sub:'Six spaces of growth',                num:'02'},
-  {id:'kraver',    name:'Three ideas',        sub:'Kraver · KASI · Colonel Club',         num:'03'},
-  {id:'model',     name:'The Model',          sub:'A permanent innovation engine',        num:'04'},
-  {id:'partner',   name:'How We Partner',     sub:'Three phases + first-year timeline',   num:'05'},
-  {id:'work',      name:'How We Work',        sub:'Four principles',                      num:'06'},
-  {id:'cases',     name:'Case Studies',       sub:'Two recent bets · end-to-end',         num:'07'},
-  {id:'close',     name:'The Ask',            sub:'A working session when you\'re ready', num:''}
+  {id:'cover', navId:'cover',     name:'Cover',                sub:'Tomorrow\'s KFC. Now.',                num:''},
+  {id:'chap1', navId:'insights',  name:'Insights & Trends',    sub:'The world KFC is pitching into',       num:'01'},
+  {id:'chap2', navId:'framework', name:'Innovation Framework', sub:'Six spaces of growth',                 num:'02'},
+  {id:'chap3', navId:'kraver',    name:'Three ideas',          sub:'Kraver · KASI · Colonel Club',         num:'03'},
+  {id:'chap4', navId:'model',     name:'The Model',            sub:'A permanent innovation engine',        num:'04'},
+  {id:'chap5', navId:'partner',   name:'How We Partner',       sub:'Three phases + first-year timeline',   num:'05'},
+  {id:'chap6', navId:'work',      name:'How We Work',          sub:'Four principles',                      num:'06'},
+  {id:'chap7', navId:'cases',     name:'Case Studies',         sub:'Two recent bets · end-to-end',         num:'07'},
+  {id:'close', navId:'close',     name:'The Ask',              sub:'A working session when you\'re ready', num:''}
 ];
 const chapterSections = chapterDefs.map(c=>c.id);
 function currentChapter(){
@@ -2598,7 +2598,7 @@ function renderPalette(filter=''){
 function openPalette(){palette.classList.add('open');palInput.value='';palSel=0;renderPalette();setTimeout(()=>palInput.focus(),60)}
 function closePalette(){palette.classList.remove('open')}
 function jumpTo(i){
-  const el = document.getElementById(chapterDefs[i].id);
+  const el = document.getElementById(chapterDefs[i].navId);
   if(el) window.scrollTo({top:el.offsetTop,behavior:'smooth'});
   closePalette();
 }
