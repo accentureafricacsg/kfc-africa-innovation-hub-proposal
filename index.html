@@ -811,7 +811,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 .cs-card:hover{border-color:rgba(161,0,255,.35);transform:translateY(-4px)}
 .cs-card:hover::before{opacity:1.2}
 
-.cs-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.cs-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding-right:130px}
 .cs-lbl{font-size:10px;letter-spacing:3px;font-weight:800;color:var(--p3)}
 .cs-badge{font-size:9px;letter-spacing:2px;font-weight:800;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.18);padding:4px 10px;border-radius:30px}
 
@@ -2124,7 +2124,7 @@ h1.hero.revealed .hero-hint{opacity:0}
             <div class="gantt-row-lbl">Scale the winners</div>
             <div class="gantt-track">
               <div class="gantt-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-              <div class="gantt-bar s3" style="left:75%;width:16.66%" data-lane="3" data-from="36" data-to="44"></div>
+              <div class="gantt-bar s3" style="left:75%;width:25%" data-lane="3" data-from="36" data-to="48"></div>
             </div>
           </div>
           <div class="gantt-scrub-track" id="gScrubTrack">
@@ -2997,20 +2997,22 @@ document.getElementById('rAgain').addEventListener('click',()=>{
   const narratives = {
     1: [ // Build — keyed by week upper bound
       {to:4, t:'Mandate & <em>Hub mobilised</em>'},
-      {to:12,t:'Future fact base · <em>opportunity spaces</em>'},
-      {to:20,t:'Concept packs · <em>first portfolio</em> ready'},
-      {to:48,t:'Build phase complete — <em>handed to Fuel</em>'}
+      {to:8, t:'Future fact base · <em>opportunity spaces</em>'},
+      {to:12,t:'Concept packs + <em>first validation</em> ready'},
+      {to:48,t:'Build complete — <em>engine handed to Fuel</em>'}
     ],
     2: [
-      {to:8, t:'Fuel starts month 2 — <em>scanning comes online</em>'},
-      {to:20,t:'Innovation sprints · <em>AI-enabled testing</em>'},
+      {to:4, t:'Fuel awaits start — <em>warming up</em>'},
+      {to:12,t:'Innovation sprints · <em>AI-enabled testing</em>'},
+      {to:32,t:'Always-on scanning · <em>signals feeding the portfolio</em>'},
       {to:36,t:'Portfolio refresh · <em>kill/continue gates</em>'},
       {to:48,t:'Challenge re-framing · <em>pipeline stays honest</em>'}
     ],
     3: [
-      {to:16,t:'Launch activates month 4 — <em>first bet earns the right</em>'},
-      {to:24,t:'Service architect & <em>venture build</em>'},
-      {to:32,t:'Pilot live in-market · <em>measure + iterate</em>'},
+      {to:12,t:'Launch awaits the <em>first validated bet</em>'},
+      {to:20,t:'Architect & <em>venture build</em>'},
+      {to:28,t:'Pilot live in-market'},
+      {to:40,t:'Measure · <em>iterate fast</em>'},
       {to:48,t:'Scale the winners · <em>unlock playbook</em>'}
     ]
   };
@@ -3037,9 +3039,9 @@ document.getElementById('rAgain').addEventListener('click',()=>{
     groBuildT.innerHTML = readoutFor(1,week);
     groFuelT.innerHTML  = readoutFor(2,week);
     groLaunchT.innerHTML= readoutFor(3,week);
-    groBuild.classList.toggle('dim', week>20);
-    groFuel.classList.toggle('dim', week<8);
-    groLaunch.classList.toggle('dim', week<16);
+    groBuild.classList.toggle('dim', week>12);
+    groFuel.classList.toggle('dim', week<4);
+    groLaunch.classList.toggle('dim', week<12);
   }
 
   let dragging=false;
