@@ -2553,32 +2553,60 @@ const chapterDefs = [
   {id:'close', navId:'close',     name:'The Ask',              sub:'A working session when you\'re ready', num:''}
 ];
 const chapterSections = chapterDefs.map(c=>c.id);
-function currentChapter(){
-  const y = window.scrollY + window.innerHeight*.6;
-  let n = 0;
-  chapterSections.forEach((id,i)=>{
-    const el = document.getElementById(id);
-    if(el && el.offsetTop <= y) n = i;
-  });
-  return n;
-}
 const pbar = document.getElementById('pbar');
 const pbarFill = document.getElementById('pbarFill');
 const pbCN = document.getElementById('pbCN');
 const pbCT = document.getElementById('pbCT');
-window.addEventListener('scroll',()=>{
+const pbSep = document.querySelector('.pbar-chap .sep');
+
+// Cache chapter elements (resolved once at startup)
+const chapterEls = chapterSections.map(id => document.getElementById(id));
+
+function currentChapter(){
+  // Use getBoundingClientRect (viewport-relative) — robust against positioning contexts
+  const triggerY = window.innerHeight * 0.3; // section is "current" when its top is at or above 30% from viewport top
+  let n = 0;
+  for (let i = 0; i < chapterEls.length; i++) {
+    const el = chapterEls[i];
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= triggerY) n = i;
+    }
+  }
+  return n;
+}
+
+let lastChapter = -1;
+function updateProgress(){
   const maxScroll = Math.max(1, document.documentElement.scrollHeight - document.documentElement.clientHeight);
   const scrolled = Math.min(1, window.scrollY / maxScroll);
   const c = currentChapter();
-  const num = chapterDefs[c].num || '';
-  pbCN.textContent = num;
-  pbCN.style.display = num ? '' : 'none';
-  document.querySelector('.pbar-chap .sep').style.display = num ? '' : 'none';
-  pbCT.textContent = chapterDefs[c].name.toUpperCase();
+  if (c !== lastChapter) {
+    lastChapter = c;
+    const num = chapterDefs[c].num || '';
+    pbCN.textContent = num;
+    pbCN.style.display = num ? '' : 'none';
+    if (pbSep) pbSep.style.display = num ? '' : 'none';
+    pbCT.textContent = chapterDefs[c].name.toUpperCase();
+  }
   pbarFill.style.width = (scrolled*100)+'%';
   topChrome.classList.toggle('vis', window.scrollY > window.innerHeight*0.75);
   pbar.classList.toggle('vis', window.scrollY > window.innerHeight*0.5);
-});
+}
+
+let scrollScheduled = false;
+window.addEventListener('scroll', () => {
+  if (scrollScheduled) return;
+  scrollScheduled = true;
+  requestAnimationFrame(() => {
+    scrollScheduled = false;
+    updateProgress();
+  });
+}, {passive: true});
+
+// Initial run + safety re-check after layout
+updateProgress();
+window.addEventListener('load', updateProgress);
 
 /* ==================== ⌘K SECTION PALETTE ==================== */
 const palette = document.getElementById('palette');
