@@ -686,21 +686,23 @@ h1.hero.revealed .hero-hint{opacity:0}
 .pt-tl-legend .l3 i{background:var(--red)}
 
 .gantt{position:relative;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px 24px 16px;margin-bottom:18px}
-.gantt-months{display:grid;grid-template-columns:repeat(12,1fr);margin-bottom:10px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:8px}
+.gantt-months{display:grid;grid-template-columns:repeat(12,1fr);margin-bottom:10px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:8px;padding-left:216px}
 .gantt-months span{font-size:9px;letter-spacing:1.5px;font-weight:800;color:var(--text3);text-align:center}
 .gantt-months span.q{color:var(--p3)}
 .gantt-lanes{position:relative}
-.gantt-lane{display:grid;grid-template-columns:120px 1fr;align-items:center;gap:16px;margin-bottom:10px;position:relative}
-.gantt-lane:last-child{margin-bottom:0}
-.gantt-lane-lbl{font-size:10px;letter-spacing:2px;font-weight:800;color:#fff;display:flex;align-items:center;gap:8px}
-.gantt-lane-lbl i{width:10px;height:10px;border-radius:3px;flex-shrink:0}
-.gantt-lane-lbl .s1{background:var(--p)}
-.gantt-lane-lbl .s2{background:var(--p2)}
-.gantt-lane-lbl .s3{background:var(--red)}
-.gantt-track{position:relative;height:42px;background:rgba(255,255,255,.03);border-radius:6px;overflow:visible}
+.gantt-row{display:grid;grid-template-columns:200px 1fr;align-items:center;gap:16px;margin-bottom:4px;position:relative}
+.gantt-row-lbl{font-size:11px;color:rgba(255,255,255,.7);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:8px;letter-spacing:.3px}
+.gantt-phase{display:flex;align-items:center;gap:12px;padding:12px 0 8px;font-size:10px;letter-spacing:2.5px;font-weight:800;color:#fff;text-transform:uppercase}
+.gantt-phase:first-child{padding-top:2px}
+.gantt-phase::before{content:"";width:10px;height:10px;border-radius:3px;flex-shrink:0;display:inline-block}
+.gantt-phase::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.08);margin-left:6px}
+.gantt-phase.s1-hd::before{background:var(--p)}
+.gantt-phase.s2-hd::before{background:var(--p2)}
+.gantt-phase.s3-hd::before{background:var(--red)}
+.gantt-track{position:relative;height:26px;background:rgba(255,255,255,.03);border-radius:6px;overflow:visible}
 .gantt-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);pointer-events:none}
 .gantt-grid span{border-right:1px dashed rgba(255,255,255,.05)}
-.gantt-bar{position:absolute;top:6px;bottom:6px;border-radius:5px;padding:0 10px;display:flex;align-items:center;font-size:10.5px;font-weight:700;color:#fff;letter-spacing:.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;transition:filter .25s,transform .25s}
+.gantt-bar{position:absolute;top:4px;bottom:4px;border-radius:5px;cursor:pointer;transition:filter .25s,transform .25s}
 .gantt-bar:hover{filter:brightness(1.15);transform:translateY(-1px)}
 .gantt-bar.s1{background:linear-gradient(135deg,rgba(161,0,255,.85),rgba(161,0,255,.6));box-shadow:0 4px 12px rgba(161,0,255,.3)}
 .gantt-bar.s2{background:linear-gradient(135deg,rgba(196,79,255,.85),rgba(196,79,255,.6));box-shadow:0 4px 12px rgba(196,79,255,.3)}
@@ -709,7 +711,7 @@ h1.hero.revealed .hero-hint{opacity:0}
 
 /* Scrubber */
 .gantt-scrub{position:absolute;top:0;bottom:0;left:0;width:2px;background:linear-gradient(180deg,#fff,rgba(255,255,255,.3));pointer-events:none;z-index:5;box-shadow:0 0 14px rgba(255,255,255,.5);transition:left .1s linear}
-.gantt-scrub-track{position:absolute;left:120px;right:0;top:-12px;bottom:-12px;cursor:grab;z-index:4}
+.gantt-scrub-track{position:absolute;left:216px;right:0;top:-12px;bottom:-12px;cursor:grab;z-index:4}
 .gantt-scrub-track:active{cursor:grabbing}
 .gantt-scrub-handle{position:absolute;top:-8px;left:-10px;width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--red);box-shadow:0 4px 14px rgba(228,0,43,.5);z-index:6;transition:left .1s linear}
 .gantt-scrub-label{position:absolute;top:-36px;left:-32px;background:#E4002B;color:#fff;padding:4px 10px;border-radius:4px;font-size:10px;font-weight:800;letter-spacing:1.5px;white-space:nowrap;box-shadow:0 4px 10px rgba(228,0,43,.5);z-index:6;transition:left .1s linear}
@@ -2043,33 +2045,86 @@ h1.hero.revealed .hero-hint{opacity:0}
           <span class="q">M1</span><span>M2</span><span>M3</span><span class="q">M4</span><span>M5</span><span>M6</span><span class="q">M7</span><span>M8</span><span>M9</span><span class="q">M10</span><span>M11</span><span>M12</span>
         </div>
         <div class="gantt-lanes" id="gantt">
-          <div class="gantt-lane">
-            <div class="gantt-lane-lbl"><i class="s1"></i>BUILD</div>
+          <div class="gantt-phase s1-hd">BUILD</div>
+          <div class="gantt-row">
+            <div class="gantt-row-lbl">Mandate</div>
             <div class="gantt-track">
               <div class="gantt-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-              <div class="gantt-bar s1" style="left:0%;width:8.33%" data-lane="1" data-from="0" data-to="4">Mandate</div>
-              <div class="gantt-bar s1" style="left:8.33%;width:8.33%" data-lane="1" data-from="4" data-to="8">Fact base · Opportunity spaces</div>
-              <div class="gantt-bar s1" style="left:16.66%;width:8.33%" data-lane="1" data-from="8" data-to="12">Concept packs + Validation</div>
+              <div class="gantt-bar s1" style="left:0%;width:8.33%" data-lane="1" data-from="0" data-to="4"></div>
             </div>
           </div>
-          <div class="gantt-lane">
-            <div class="gantt-lane-lbl"><i class="s2"></i>FUEL</div>
+          <div class="gantt-row">
+            <div class="gantt-row-lbl">Fact base · Opportunities</div>
             <div class="gantt-track">
               <div class="gantt-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-              <div class="gantt-bar s2" style="left:8.33%;width:16.66%" data-lane="2" data-from="4" data-to="12">Innovation sprints · AI testing</div>
-              <div class="gantt-bar s2" style="left:25%;width:41.66%" data-lane="2" data-from="12" data-to="32">Always-on scanning</div>
-              <div class="gantt-bar s2" style="left:41.66%;width:33.33%" data-lane="2" data-from="20" data-to="36">Portfolio refresh</div>
-              <div class="gantt-bar s2" style="left:58.33%;width:25%" data-lane="2" data-from="28" data-to="40">Challenge re-framing</div>
+              <div class="gantt-bar s1" style="left:8.33%;width:8.33%" data-lane="1" data-from="4" data-to="8"></div>
             </div>
           </div>
-          <div class="gantt-lane">
-            <div class="gantt-lane-lbl"><i class="s3"></i>LAUNCH</div>
+          <div class="gantt-row">
+            <div class="gantt-row-lbl">Concept packs + Validation</div>
             <div class="gantt-track">
               <div class="gantt-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-              <div class="gantt-bar s3" style="left:25%;width:16.66%" data-lane="3" data-from="12" data-to="20">Architect & build</div>
-              <div class="gantt-bar s3" style="left:41.66%;width:16.66%" data-lane="3" data-from="20" data-to="28">Pilot in-market</div>
-              <div class="gantt-bar s3" style="left:58.33%;width:25%" data-lane="3" data-from="28" data-to="40">Measure · Iterate</div>
-              <div class="gantt-bar s3" style="left:75%;width:16.66%" data-lane="3" data-from="36" data-to="44">Scale the winners</div>
+              <div class="gantt-bar s1" style="left:16.66%;width:8.33%" data-lane="1" data-from="8" data-to="12"></div>
+            </div>
+          </div>
+
+          <div class="gantt-phase s2-hd">FUEL</div>
+          <div class="gantt-row">
+            <div class="gantt-row-lbl">Innovation sprints · AI testing</div>
+            <div class="gantt-track">
+              <div class="gantt-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="gantt-bar s2" style="left:8.33%;width:16.66%" data-lane="2" data-from="4" data-to="12"></div>
+            </div>
+          </div>
+          <div class="gantt-row">
+            <div class="gantt-row-lbl">Always-on scanning</div>
+            <div class="gantt-track">
+              <div class="gantt-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="gantt-bar s2" style="left:25%;width:41.66%" data-lane="2" data-from="12" data-to="32"></div>
+            </div>
+          </div>
+          <div class="gantt-row">
+            <div class="gantt-row-lbl">Portfolio refresh</div>
+            <div class="gantt-track">
+              <div class="gantt-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="gantt-bar s2" style="left:41.66%;width:33.33%" data-lane="2" data-from="20" data-to="36"></div>
+            </div>
+          </div>
+          <div class="gantt-row">
+            <div class="gantt-row-lbl">Challenge re-framing</div>
+            <div class="gantt-track">
+              <div class="gantt-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="gantt-bar s2" style="left:58.33%;width:25%" data-lane="2" data-from="28" data-to="40"></div>
+            </div>
+          </div>
+
+          <div class="gantt-phase s3-hd">LAUNCH</div>
+          <div class="gantt-row">
+            <div class="gantt-row-lbl">Architect & build</div>
+            <div class="gantt-track">
+              <div class="gantt-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="gantt-bar s3" style="left:25%;width:16.66%" data-lane="3" data-from="12" data-to="20"></div>
+            </div>
+          </div>
+          <div class="gantt-row">
+            <div class="gantt-row-lbl">Pilot in-market</div>
+            <div class="gantt-track">
+              <div class="gantt-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="gantt-bar s3" style="left:41.66%;width:16.66%" data-lane="3" data-from="20" data-to="28"></div>
+            </div>
+          </div>
+          <div class="gantt-row">
+            <div class="gantt-row-lbl">Measure · Iterate</div>
+            <div class="gantt-track">
+              <div class="gantt-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="gantt-bar s3" style="left:58.33%;width:25%" data-lane="3" data-from="28" data-to="40"></div>
+            </div>
+          </div>
+          <div class="gantt-row">
+            <div class="gantt-row-lbl">Scale the winners</div>
+            <div class="gantt-track">
+              <div class="gantt-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="gantt-bar s3" style="left:75%;width:16.66%" data-lane="3" data-from="36" data-to="44"></div>
             </div>
           </div>
           <div class="gantt-scrub-track" id="gScrubTrack">
