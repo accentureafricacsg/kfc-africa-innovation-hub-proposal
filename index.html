@@ -2542,15 +2542,15 @@ document.querySelectorAll('[data-chap]').forEach(el=>ioChap.observe(el));
 /* ==================== PROGRESS RING + CHAPTER TRACKING ==================== */
 const topChrome = document.querySelector('.top-chrome');
 const chapterDefs = [
-  {id:'cover',     name:'Cover',              sub:'Tomorrow\'s KFC. Now.'},
-  {id:'insights',  name:'Insights & Trends',  sub:'The world KFC is pitching into'},
-  {id:'framework', name:'Innovation Framework', sub:'Six spaces of growth'},
-  {id:'kraver',    name:'Three ideas',        sub:'Kraver · KASI · Colonel Club'},
-  {id:'model',     name:'The Model',          sub:'A permanent innovation engine'},
-  {id:'partner',   name:'How We Partner',     sub:'Three phases + first-year timeline'},
-  {id:'work',      name:'How We Work',        sub:'Four principles'},
-  {id:'cases',     name:'Case Studies',       sub:'Two recent bets · end-to-end'},
-  {id:'close',     name:'The Ask',            sub:'A working session when you\'re ready'}
+  {id:'cover',     name:'Cover',              sub:'Tomorrow\'s KFC. Now.',                num:''},
+  {id:'insights',  name:'Insights & Trends',  sub:'The world KFC is pitching into',       num:'01'},
+  {id:'framework', name:'Innovation Framework', sub:'Six spaces of growth',                num:'02'},
+  {id:'kraver',    name:'Three ideas',        sub:'Kraver · KASI · Colonel Club',         num:'03'},
+  {id:'model',     name:'The Model',          sub:'A permanent innovation engine',        num:'04'},
+  {id:'partner',   name:'How We Partner',     sub:'Three phases + first-year timeline',   num:'05'},
+  {id:'work',      name:'How We Work',        sub:'Four principles',                      num:'06'},
+  {id:'cases',     name:'Case Studies',       sub:'Two recent bets · end-to-end',         num:'07'},
+  {id:'close',     name:'The Ask',            sub:'A working session when you\'re ready', num:''}
 ];
 const chapterSections = chapterDefs.map(c=>c.id);
 function currentChapter(){
@@ -2570,7 +2570,10 @@ window.addEventListener('scroll',()=>{
   const maxScroll = Math.max(1, document.documentElement.scrollHeight - document.documentElement.clientHeight);
   const scrolled = Math.min(1, window.scrollY / maxScroll);
   const c = currentChapter();
-  pbCN.textContent = String(c+1).padStart(2,'0');
+  const num = chapterDefs[c].num || '';
+  pbCN.textContent = num;
+  pbCN.style.display = num ? '' : 'none';
+  document.querySelector('.pbar-chap .sep').style.display = num ? '' : 'none';
   pbCT.textContent = chapterDefs[c].name.toUpperCase();
   pbarFill.style.width = (scrolled*100)+'%';
   topChrome.classList.toggle('vis', window.scrollY > window.innerHeight*0.75);
